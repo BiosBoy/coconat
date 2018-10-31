@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": false,
+    "module": "esnext",
+    "target": "es5",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"]
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "typeRoots": [
+    "./typings.d.ts",
+    "./node_modules/@types"
+  ],
+  "include": [
+    ".src/.ts",
+    "src/**/*",
+    "./typings.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "server",
+    "dist"
+  ]
+}
