@@ -1,9 +1,9 @@
 
 
-# Webpack4 - React16.7 Templater App 
+# Webpack4 - React16 Templater App 
 ### Make custom React app development easly as never before!
 
-This **Webpack4 + React16.7 Templater** is created from the point of view to solve developer day-to-day problems with app suits boilerplate creation. It has all what we need to start React app creation with rocket speed without worring about, like:
+This **Webpack4 + React16 Templater** is created from the point of view to solve developer day-to-day problems with app suits boilerplate creation. It has all what we need to start React app creation with rocket speed without worring about, like:
  1. Oh, I need optimize my app!
  2. Oh, I need create a server for app handling!
  3. Oh, I need install Webpack and spend a time to configure it!
