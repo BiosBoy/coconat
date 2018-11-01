@@ -7,4 +7,4 @@ module.exports = {
   jsxBracketSameLine: false,
   semi: false,
   write: true
-}
+};
