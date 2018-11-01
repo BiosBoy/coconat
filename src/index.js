@@ -5,6 +5,7 @@ import AppContainer from './container/index.js';
 
 const ENTRY_POINT = document.querySelector('#react-app-root');
 
+// creating starting endpoint for app.
 const render = () => {
   ReactDOM.render(
     <AppContainer />,
@@ -12,6 +13,7 @@ const render = () => {
   );
 };
 
+// this will help us understand where the problem is located once app will fall.
 const renderError = error => {
   ReactDOM.render(
     <RedBox error={error} />,

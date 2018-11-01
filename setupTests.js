@@ -1,4 +1,5 @@
-// TODO: Remove these polyfills once the below issue is sorted
+// TODO: Remove these polyfills once the below issue is solved.
+// It present here to allow Jest work with the last React environment.
 // https://github.com/facebookincubator/create-react-app/issues/3199#issuecomment-332842582
 global.requestAnimationFrame = cb => {
   setTimeout(cb, 0);

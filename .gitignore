@@ -1,3 +1,5 @@
+// put here all file that you need to execlude from pushing on git platform.
+
 *.log
 node_modules
 dist

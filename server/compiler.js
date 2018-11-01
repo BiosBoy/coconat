@@ -5,6 +5,9 @@ const debug = require('debug')('app:build:webpack-compiler');
 const webpack = require('webpack');
 const webpackConfig = require('../webpack.config.js');
 
+// -----------------------------
+// STARTING APP COMPILATION PROCESS
+// -----------------------------
 function webpackCompiler() {
   return new Promise((resolve, reject) => {
     const compiler = webpack(webpackConfig);
@@ -25,6 +28,9 @@ function webpackCompiler() {
   });
 }
 
+// -----------------------------
+// READING WEBPACK CONFIGURATION
+// -----------------------------
 const compile = () => {
   debug('Starting compiler.');
 
