@@ -9,6 +9,9 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackConfig = require('../webpack.config.js');
 const bundler = webpack(webpackConfig);
 
+// ========================================================
+// WEBPACK MIDDLEWARE CONFIGURATION
+// ========================================================
 const devMiddlewareOptions = {
   publicPath: webpackConfig.output.publicPath,
   hot: true,
