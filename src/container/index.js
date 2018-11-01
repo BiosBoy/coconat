@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Header } from '../components';
+import { Header, Footer, HelloWorld } from '../components';
 import styles from '../styles/index.scss';
 
 class AppContainer extends PureComponent {
@@ -7,7 +7,8 @@ class AppContainer extends PureComponent {
     return (
       <div className={styles.appWrapper}>
         <Header />
-        Hello World!
+        <HelloWorld />
+        <Footer />
       </div>
     );
   }
