@@ -1,4 +1,5 @@
 
+
 # Webpack4 - React16.7 Templater App 
 ### Make custom React app development easly as never before!
 
@@ -18,7 +19,10 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  * BrowserSync Server is configured just out of the box!
  * All needed packages to work you can bootstap just by one command with `lerna` npm package: `lerna bootstrap`
  * Support TypeScript version 3^.
-
+ 
+ 
+  
+# What is you have out of the box?
  ## Webpack:
  * Fully support all Webpack 4^ possibilities.
  * Support code-splitting and bundles app creation out of the box.
@@ -52,7 +56,7 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  * Includes lint-stages ^1 for styling and testing whole app code (js/jsx/ts/tsx/css/scss/json) before commiting.
  * Checks code on lint rule errors before accept user commit.
  * Run test suits before accept user commit.
-
+ 
 
 # Technical information:
 ### App technical environment that are 100% support with:
@@ -67,6 +71,7 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  * eslint/tsline/stylelint
  * lerna
  * typescript
+
 
 
 # FAQ:
