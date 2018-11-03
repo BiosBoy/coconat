@@ -15,13 +15,23 @@
       "jsonlint --formatter=verbose",
       "git add"
     ],
-    "*.scss": [
+    "*.@(css|scss)": [
+      "stylelint --fix --formatter=verbose",
+      "git add"
+    ],
+    "*.cssmodule": [
       "stylelint --fix --syntax scss --formatter=verbose",
       "git add"
     ],
     "*.@(js|jsx)": [
-      "prettier --config prettier.config.js",
-      "eslint --quiet",
+      "prettier --write",
+      "eslint --fix --quiet",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ],
+    "*.@(ts|tsx)": [
+      "prettier --write --parser typescript",
+      "tslint --config tsconfig.json",
       "git add",
       "jest --bail --findRelatedTests"
     ]
