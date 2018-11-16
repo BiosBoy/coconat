@@ -1,15 +1,16 @@
 
 
-# Webpack4 - React16 Templater App 
+# Webpack4 - React16 Templater App
 ### Make custom React app development easly as never before!
 
 This **Webpack4 + React16 Templater** is created from the point of view to solve developer day-to-day problems with app suits boilerplate creation. It has all what we need to start React app creation with rocket speed without worring about, like:
  1. Oh, I need optimize my app!
  2. Oh, I need create a server for app handling!
- 3. Oh, I need install Webpack and spend a time to configure it!
- 4. Oh, I need to optimize and minimize JS/CSS/etc. bundles!
- 5. Oh, I need to install and configure testing environment!
- 6. And a lot of other boring things...
+ 3. Oh, I need a Redux/Redux-Saga installations for state managment in app!
+ 4. Oh, I need install Webpack and spend a time to configure it!
+ 5. Oh, I need to optimize and minimize JS/CSS/etc. bundles!
+ 6. Oh, I need to install and configure testing environment!
+ 7. And a lot of other boring things...
 
 So, by using this **Templater** you will save a lot of time and will stay focused only on your own app creation. Have fun :)
 
@@ -19,9 +20,9 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  * BrowserSync Server is configured just out of the box!
  * All needed packages to work you can bootstap just by one command with `lerna` npm package: `lerna bootstrap`
  * Support TypeScript version 3^.
- 
- 
-  
+
+
+
 # What is you have out of the box?
  ## Webpack:
  * Fully support all Webpack 4^ possibilities.
@@ -36,6 +37,10 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  ## React:
  * Support all new features from React 16.7@-alpha release.
  * Hooks, Suspence and Lazy load can be used out of the box.
+
+ ## Redux:
+ * Redux^4.0.1 is fully integrated with React to start your work asap.
+ * Including Redux-Saga^0.16.2 for async actions handling.
 
  ## Styling:
  * Support CSS/SASS style markup.
@@ -56,7 +61,7 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  * Includes lint-stages ^1 for styling and testing whole app code (js/jsx/ts/tsx/css/scss/json) before commiting.
  * Checks code on lint rule errors before accept user commit.
  * Run test suits before accept user commit.
- 
+
 
 # Technical information:
 ### App technical environment that are 100% support with:

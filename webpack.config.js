@@ -1,4 +1,3 @@
-
 // import global vars for a whole app
 require('./globals');
 
@@ -98,9 +97,7 @@ const optimization = {
 // STAGE PLUGINS INJECTION! [DEVELOPMENT, PRODUCTION, TESTING]
 // ------------------------------------
 const stagePlugins = {
-  test: [
-    new BundleAnalyzerPlugin()
-  ],
+  test: [new BundleAnalyzerPlugin()],
   development: [
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html'),
@@ -166,9 +163,7 @@ const createConfig = () => {
     devtool: stageConfig[__NODE_ENV__].devtool,
     stats: stageConfig[__NODE_ENV__].stats,
     module: {
-      rules: [
-        ...rules
-      ]
+      rules: [...rules]
     },
     ...optimization,
     resolve: {
@@ -181,7 +176,9 @@ const createConfig = () => {
   // Entry Points
   // ------------------------------------
   webpackConfig.entry = {
-    app: [path.resolve(__dirname, 'src/index.js')].concat('webpack-hot-middleware/client?path=/__webpack_hmr')
+    app: ['babel-polyfill', path.resolve(__dirname, 'src/index.js')].concat(
+      'webpack-hot-middleware/client?path=/__webpack_hmr'
+    )
   };
 
   // ------------------------------------

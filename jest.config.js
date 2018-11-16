@@ -1,22 +1,23 @@
-// Jest tesitng config. Responce for app tests.
 module.exports = {
   cacheDirectory: '<rootDir>/.tmp/jest',
   coverageDirectory: './.tmp/coverage',
   moduleNameMapper: {
-    '^.+\\.(scss)$': 'identity-obj-proxy'
+    '^.+\\.(css|scss|cssmodule)$': 'identity-obj-proxy'
   },
   modulePaths: ['<rootDir>'],
-  moduleFileExtensions: ['js', 'jsx', 'json'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   globals: {
     NODE_ENV: 'test'
   },
   verbose: true,
-  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
+  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$',
   testPathIgnorePatterns: ['/node_modules/', '/__tests__/mocks/.*'],
-  transformIgnorePatterns: ['.*(node_modules)(?!.*torn.*).*$'],
+  coveragePathIgnorePatterns: ['typings.d.ts'],
+  transformIgnorePatterns: ['.*(node_modules).*$'],
   transform: {
-    '^.+\\.js$': 'babel-jest'
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest'
   },
-  setupFiles: ['<rootDir>/setupTests.js'],
+  setupFiles: ['<rootDir>/setupTests.js', '<rootDir>/node_modules/whatwg-fetch/fetch.js'],
   snapshotSerializers: ['enzyme-to-json/serializer']
 };
