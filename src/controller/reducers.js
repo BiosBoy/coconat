@@ -1,3 +1,4 @@
+import { LOCATION_CHANGE } from 'connected-react-router';
 import { COUNT_ADD, SOME_ASYNC_ACTION } from '../constants';
 import initialState from './initialState';
 
@@ -13,6 +14,10 @@ const ACTION_HANDLERS = {
   [SOME_ASYNC_ACTION]: (state, action) => ({
     ...state,
     ...action.payload
+  }),
+  [LOCATION_CHANGE]: (state, action) => ({
+    ...state,
+    locationChange: action.payload.location.pathname
   })
 };
 
