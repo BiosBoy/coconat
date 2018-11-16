@@ -4,10 +4,10 @@
 ### Make custom React app development easly as never before!
 
 This **Webpack4 + React16 Templater** is created from the point of view to solve developer day-to-day problems with app suits boilerplate creation. It has all what we need to start React app creation with rocket speed without worring about, like:
- 1. Oh, I need optimize my app!
- 2. Oh, I need create a server for app handling!
+ 1. Oh, I need to optimize my app!
+ 2. Oh, I need to create a server for app handling!
  3. Oh, I need a Redux/Redux-Saga installations for state managment in app!
- 4. Oh, I need install Webpack and spend a time to configure it!
+ 4. Oh, I need to install Webpack and spend a time to configure it!
  5. Oh, I need to optimize and minimize JS/CSS/etc. bundles!
  6. Oh, I need to install and configure testing environment!
  7. And a lot of other boring things...
