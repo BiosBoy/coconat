@@ -9509,6 +9509,16 @@ redux-logger@^3.0.6:
   dependencies:
     deep-diff "^0.3.5"
 
+redux-saga-watch-actions@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/redux-saga-watch-actions/-/redux-saga-watch-actions-0.2.0.tgz#0886f3e0a9b3eac86363b9d7590e9872912f85d7"
+  dependencies:
+    invariant "^2.2.2"
+
+redux-saga@^0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
+
 redux@^4.0.0, redux@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"

@@ -1,10 +1,10 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import initialState from './initialState';
 
-import { logger, makeRootReducer } from './middleware';
+import { logger, makeRootReducer, sagaMiddleware as saga, rootSaga, runSaga } from './middleware';
 
 const rootStore = () => {
-  const middleware = [logger];
+  const middleware = [saga, logger];
   const enhancers = [];
 
   if (__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION__) {
@@ -23,6 +23,8 @@ const rootStore = () => {
     )
   );
 
+  store.runSaga = runSaga;
+  runSaga(rootSaga);
   store.asyncReducers = {};
 
   return store;

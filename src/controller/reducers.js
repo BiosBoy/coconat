@@ -1,4 +1,4 @@
-import { COUNT_ADD } from '../constants';
+import { COUNT_ADD, SOME_ASYNC_ACTION } from '../constants';
 import initialState from './initialState';
 
 // ------------------------------------
@@ -9,6 +9,10 @@ const ACTION_HANDLERS = {
     ...state,
     count: action.count,
     countDoubl: action.count % 2 === 0 ? action.count : state.countDoubl
+  }),
+  [SOME_ASYNC_ACTION]: (state, action) => ({
+    ...state,
+    ...action.payload
   })
 };
 

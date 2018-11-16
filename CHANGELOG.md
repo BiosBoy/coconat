@@ -1,5 +1,10 @@
 ## Webpack4 - React16.7 Templater App
 
+
+# 0.4.0
+ * Integrated Redux state managment in the app.
+ * Integrated Redux saga for async actions managment.
+
 # 0.3.2
  * Fixed TSLint checking on pre-commit stage.
 
