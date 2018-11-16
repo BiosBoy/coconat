@@ -42,6 +42,10 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  * Redux^4.0.1 is fully integrated with React to start your work asap.
  * Including Redux-Saga^0.16.2 for async actions handling.
 
+## Routing:
+ * React-Router^4.3.1 - React app from the start can be multy-page oriented.
+ * Connected-React-Router^5.0.1 holdes synhromious app Redux and Browser Location states.
+
  ## Styling:
  * Support CSS/SASS style markup.
  * Integrated CSSModules for independent component styling.

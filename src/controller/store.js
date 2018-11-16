@@ -1,10 +1,12 @@
 import { applyMiddleware, compose, createStore } from 'redux';
+import { routerMiddleware } from 'connected-react-router';
 import initialState from './initialState';
+import history from './history';
 
 import { logger, makeRootReducer, sagaMiddleware as saga, rootSaga, runSaga } from './middleware';
 
 const rootStore = () => {
-  const middleware = [saga, logger];
+  const middleware = [routerMiddleware(history), saga, logger];
   const enhancers = [];
 
   if (__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION__) {

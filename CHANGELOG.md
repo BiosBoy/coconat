@@ -1,6 +1,9 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 0.5.0
+ * Integrated React-Routing for app routring.
+
 # 0.4.0
  * Integrated Redux state managment in the app.
  * Integrated Redux saga for async actions managment.

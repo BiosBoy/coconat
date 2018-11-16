@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RedBox from 'redbox-react';
-import { syncHistoryWithStore } from 'react-router-redux';
-import createBrowserHistory from 'history/createBrowserHistory';
 
 import store from './controller/store';
+import history from './controller/history';
 import AppContainer from './container/index';
-
-const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 const ENTRY_POINT = document.querySelector('#react-app-root');
 

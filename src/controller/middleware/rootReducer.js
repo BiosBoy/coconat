@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
-import { routerReducer as routing } from 'react-router-redux';
+import { connectRouter } from 'connected-react-router';
 import common from '../reducers';
+import history from '../history';
 
 const makeRootReducer = asyncReducers => {
   return combineReducers({
     ...asyncReducers,
     common,
-    routing
+    // routing
+    router: connectRouter(history)
   });
 };
 
