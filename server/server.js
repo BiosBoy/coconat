@@ -3,7 +3,6 @@ require('../globals');
 
 const path = require('path');
 const browserSync = require('browser-sync');
-const historyApiFallback = require('connect-history-api-fallback');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -32,7 +31,6 @@ browserSync({
   server: {
     baseDir: path.resolve(__dirname, '../src'),
     middleware: [
-      historyApiFallback(),
       webpackDevMiddleware(bundler, devMiddlewareOptions),
       webpackHotMiddleware(bundler)
     ]
