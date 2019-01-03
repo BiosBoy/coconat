@@ -18,7 +18,8 @@
       "check-type"
     ],
     "arrow-return-shorthand": [false],
-    "semicolon": [true, "never"],
+    "semicolon": [true, "always", "ignore-interfaces"],
+    "space-in-parens": [true, "always"],
     "block-spacing": [
       true,
       "never"

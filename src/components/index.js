@@ -1,6 +1,5 @@
 import Header from './Header';
 import Footer from './Footer';
-import HelloWorld from './HelloWorld';
+import Body from './Body';
 
-export { Header, Footer, HelloWorld };
-
+export { Header, Footer, Body };

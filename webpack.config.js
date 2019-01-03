@@ -14,15 +14,37 @@ const debug = require('debug')('app:webpack:config');
 // RULES INJECTION!
 // ------------------------------------
 const rules = [
+  // PRELOAD CHECKING
+  {
+    enforce: 'pre',
+    test: /\.(js|jsx)?$/,
+    exclude: /(node_modules|bower_components)/,
+    loader: 'eslint-loader',
+    options: {
+      quiet: true
+    }
+  },
+  {
+    enforce: 'pre',
+    test: /\.(ts|tsx)?$/,
+    exclude: /(node_modules|bower_components)/,
+    loader: 'tslint-loader',
+    options: {
+      quiet: true,
+      tsConfigFile: './tsconfig.json'
+    }
+  },
   // JAVASCRIPT/JSON
   {
-    test: /\.(js|jsx|ts|tsx)?$/,
+    test: /\.html$/,
     use: {
-      loader: 'awesome-typescript-loader',
-      options: {
-        module: 'es6'
-      }
+      loader: 'html-loader'
     }
+  },
+  {
+    test: /\.(js|jsx|ts|tsx)?$/,
+    exclude: /(node_modules|bower_components)/,
+    loader: 'babel-loader'
   },
   {
     type: 'javascript/auto',
@@ -33,7 +55,7 @@ const rules = [
   {
     test: /.scss$/,
     use: [
-      'style-loader',
+      __PROD__ ? MiniCssExtractPlugin.loader : 'style-loader',
       {
         loader: 'css-loader',
         options: {
@@ -134,9 +156,6 @@ const stagePlugins = {
         collapseWhitespace: true
       },
       chunksSortMode: 'auto'
-    }),
-    new webpack.ProvidePlugin({
-      fetch: 'exports-loader?self.fetch!whatwg-fetch'
     })
   ]
 };
@@ -166,7 +185,7 @@ const stageConfig = {
 
 const createConfig = () => {
   debug('Creating configuration.');
-  debug(`Enabling devtools for "${__NODE_ENV__} Mode!"`);
+  debug(`Enabling devtools for '${__NODE_ENV__} Mode!'`);
 
   const webpackConfig = {
     mode: __DEV__ ? 'development' : 'production',
@@ -214,7 +233,7 @@ const createConfig = () => {
   // ------------------------------------
   // Plugins
   // ------------------------------------
-  debug(`Enable plugins for "${__NODE_ENV__} Mode!"`);
+  debug(`Enable plugins for '${__NODE_ENV__} Mode!'`);
   webpackConfig.plugins = [
     new webpack.DefinePlugin({
       __DEV__,
@@ -227,7 +246,7 @@ const createConfig = () => {
   // ------------------------------------
   // Finishing the Webpack configuration!
   // ------------------------------------
-  debug(`Webpack Bundles is Ready for "${__NODE_ENV__} Mode!"`);
+  debug(`Webpack Bundles is Ready for '${__NODE_ENV__} Mode!'`);
   return webpackConfig;
 };
 

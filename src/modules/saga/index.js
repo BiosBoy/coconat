@@ -1,7 +1,7 @@
 import { takeLatest } from 'redux-saga/effects';
-import { testSaga } from './testSaga';
+import { someSaga } from './someSaga';
 import { SOME_SAGA } from '../../constants';
 
 export default function* watchSagas() {
-  yield takeLatest(SOME_SAGA, testSaga);
+  yield takeLatest(SOME_SAGA, someSaga);
 }

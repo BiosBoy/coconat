@@ -1,6 +1,6 @@
 import { LOCATION_CHANGE } from 'connected-react-router';
 import { COUNT_ADD, SOME_ASYNC_ACTION } from '../constants';
-import initialState from './initialState';
+import initialState from '../controller/initialState';
 
 // ------------------------------------
 // Action Handlers

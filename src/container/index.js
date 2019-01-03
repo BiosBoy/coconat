@@ -1,9 +1,10 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
-import { Header, Footer, HelloWorld } from '../components';
+
+import { Header, Footer, Body } from '../components';
 import styles from '../styles/index.scss';
 
 const AppContainer = ({ store, history }) => {
@@ -12,9 +13,7 @@ const AppContainer = ({ store, history }) => {
       <ConnectedRouter history={history}>
         <div className={styles.appWrapper}>
           <Header />
-          <Switch location={location}>
-            <Route exact path='/' component={HelloWorld} />
-          </Switch>
+          <Route exact path='/' component={Body} />
           <Footer />
         </div>
       </ConnectedRouter>

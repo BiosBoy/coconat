@@ -1,6 +1,9 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 0.7.0
+ * Added major improvements and optimizations inside Webpack Configuration file.
+
 # 0.6.0
  * Major update of dependencies and devDependencies.
  * Updated eslint config.

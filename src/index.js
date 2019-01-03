@@ -25,7 +25,7 @@ if (__DEV__) {
   // ========================================================
   const devRender = () => {
     if (module.hot) {
-      module.hot.accept('./container/index.js', () => render());
+      module.hot.accept('./container/index', () => render());
     }
 
     render();

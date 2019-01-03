@@ -1,6 +1,6 @@
 const initialState = {
-  common: {
-    appName: 'react-suspense'
+  app: {
+    appName: 'reactStarterKit'
   }
 };
 
