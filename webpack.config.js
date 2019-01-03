@@ -17,7 +17,12 @@ const rules = [
   // JAVASCRIPT/JSON
   {
     test: /\.(js|jsx|ts|tsx)?$/,
-    use: ['babel-loader']
+    use: {
+      loader: 'awesome-typescript-loader',
+      options: {
+        module: 'es6'
+      }
+    }
   },
   {
     type: 'javascript/auto',
@@ -28,9 +33,16 @@ const rules = [
   {
     test: /.scss$/,
     use: [
-      __PROD__ ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
-      { loader: 'postcss-loader' },
+      'style-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 2,
+          modules: true,
+          localIdentName: '[local]___[hash:base64:5]'
+        }
+      },
+      'postcss-loader',
       'sass-loader'
     ]
   },

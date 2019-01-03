@@ -1,6 +1,11 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 0.6.0
+ * Major update of dependencies and devDependencies.
+ * Updated eslint config.
+ * Updated tslint config.
+
 # 0.5.0
  * Integrated React-Routing for app routring.
 
