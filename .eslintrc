@@ -3,8 +3,8 @@
   "parser": "babel-eslint",
   "plugins": [
       "react",
-      "import",
       "react-hooks",
+      "import",
       "jest"
   ],
   "env": {
@@ -19,7 +19,7 @@
       ],
       "import/resolver": {
           "webpack": {
-              "config": "./config/webpackConfigFactory.js"
+              "config": "./webpack.config.js"
           },
           "node": {
               "paths": [
@@ -30,19 +30,19 @@
       },
       "react": {
           "pragma": "React",
-          "version": "16.3"
+          "version": "16.7"
       }
   },
   "globals": {
-    "jest": true,
-    "react_disableWarnings": true,
-    "react_enableWarnings": true,
-    "__NODE_ENV__": false,
-    "__PORT__": false,
-    "__DEV__": false,
-    "__TEST__": false,
-    "__PROD__": false,
-    "__COVERAGE__": false
+      "jest": true,
+      "react_disableWarnings": true,
+      "react_enableWarnings": true,
+      "__NODE_ENV__": false,
+      "__PORT__": false,
+      "__DEV__": false,
+      "__TEST__": false,
+      "__PROD__": false,
+      "__COVERAGE__": false
   },
   "rules": {
       "react-hooks/rules-of-hooks": "error",
