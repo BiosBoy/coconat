@@ -1,6 +1,21 @@
 {
-  "lerna": "2.11.0",
+  "version": "3.8.4",
   "npmClient": "yarn",
-  "useWorkspaces": false,
-  "hoist": true
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "ignored-file",
+        "*.md"
+      ]
+    },
+    "bootstrap": {
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "lerna": "3.8.4"
 }

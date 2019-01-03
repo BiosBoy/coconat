@@ -117,7 +117,7 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "jsonlint": "^1.6.3",
-    "lerna": "^2.11.0",
+    "lerna": "^3.8.4",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.11.0",
     "postcss-cssnext": "^3.1.0",
