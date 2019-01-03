@@ -1,6 +1,10 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 1.0.0
+ * First stabel release!
+ * Added tslint ans eslint inside compilation babel processes builds.
+
 # 0.7.0
  * Added major improvements and optimizations inside Webpack Configuration file.
 
