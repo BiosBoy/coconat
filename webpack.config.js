@@ -1,4 +1,3 @@
-
 // import global vars for a whole app
 require('./globals');
 
@@ -18,7 +17,12 @@ const rules = [
   // JAVASCRIPT/JSON
   {
     test: /\.(js|jsx|ts|tsx)?$/,
-    use: ['babel-loader']
+    use: {
+      loader: 'awesome-typescript-loader',
+      options: {
+        module: 'es6'
+      }
+    }
   },
   {
     type: 'javascript/auto',
@@ -29,9 +33,16 @@ const rules = [
   {
     test: /.scss$/,
     use: [
-      __PROD__ ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
-      { loader: 'postcss-loader' },
+      'style-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 2,
+          modules: true,
+          localIdentName: '[local]___[hash:base64:5]'
+        }
+      },
+      'postcss-loader',
       'sass-loader'
     ]
   },
@@ -98,9 +109,7 @@ const optimization = {
 // STAGE PLUGINS INJECTION! [DEVELOPMENT, PRODUCTION, TESTING]
 // ------------------------------------
 const stagePlugins = {
-  test: [
-    new BundleAnalyzerPlugin()
-  ],
+  test: [new BundleAnalyzerPlugin()],
   development: [
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html'),
@@ -166,9 +175,7 @@ const createConfig = () => {
     devtool: stageConfig[__NODE_ENV__].devtool,
     stats: stageConfig[__NODE_ENV__].stats,
     module: {
-      rules: [
-        ...rules
-      ]
+      rules: [...rules]
     },
     ...optimization,
     resolve: {
@@ -181,7 +188,9 @@ const createConfig = () => {
   // Entry Points
   // ------------------------------------
   webpackConfig.entry = {
-    app: [path.resolve(__dirname, 'src/index.js')].concat('webpack-hot-middleware/client?path=/__webpack_hmr')
+    app: ['babel-polyfill', path.resolve(__dirname, 'src/index.js')].concat(
+      'webpack-hot-middleware/client?path=/__webpack_hmr'
+    )
   };
 
   // ------------------------------------
