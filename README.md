@@ -21,8 +21,28 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
  * All needed packages to work you can bootstap just by one command with `lerna` npm package: `lerna bootstrap`
  * Support TypeScript version 3^.
 
+## Installation
 
+1. Clone the repo on your Machine by:
 
+   ```
+    ssh clone https://github.com/BiosBoy/coconat.git
+   ```
+2. Inside the root folder install all requeried packages of the **CoConat** by command:
+   ```
+    yarn lerna bootstrap
+   ```
+3. Start up your project via **development**, **production** or **test** compilation:
+   ```
+    yarn start:dev - development mode
+    yarn start:prod - production mode
+    yarn start:test - testing mode
+   ```
+4. Test and validate yout project code with **Jest & Enzyme** test environment by command:
+   ```
+    yarn jest ./*/**.test.*
+   ```
+   
 # What is you have out of the box?
  ## Webpack:
  * Fully support all Webpack 4^ possibilities.
