@@ -42,7 +42,7 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
    ```
     yarn jest ./*/**.test.*
    ```
-That's all what you need to start build your own project! Have fun and happy coding! :)
+That's all what you need to start building your own project! Have fun and happy coding! :)
 
 # What is you have out of the box?
  ## Webpack:
