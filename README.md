@@ -28,7 +28,7 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
    ```
     ssh clone https://github.com/BiosBoy/coconat.git
    ```
-2. Inside the root folder install all requeried packages of the **CoConat** by command:
+2. Inside the root folder install all requeried packages of the **CoConat Builder** by command:
    ```
     yarn lerna bootstrap
    ```
@@ -42,7 +42,8 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
    ```
     yarn jest ./*/**.test.*
    ```
-   
+That's all what you need to start build your own project! Have fun and happy coding! :)
+
 # What is you have out of the box?
  ## Webpack:
  * Fully support all Webpack 4^ possibilities.
