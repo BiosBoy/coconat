@@ -10,7 +10,9 @@
     "target": "es5",
     "jsx": "react",
     "moduleResolution": "node",
-    "lib": ["es6", "dom"]
+    "lib": ["es6", "dom"],
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
   "typeAcquisition": {
     "enable": true

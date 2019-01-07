@@ -6,7 +6,17 @@ import history from './history';
 import { logger, makeRootReducer, sagaMiddleware as saga, rootSaga, runSaga } from './middleware';
 
 const rootStore = () => {
-  const middleware = [routerMiddleware(history), saga, logger];
+  const middleware = [];
+
+  // Adding app routing
+  middleware.push(routerMiddleware(history));
+
+  // Adding async Saga actions environment
+  middleware.push(saga);
+
+  // Adding console logger for Redux
+  middleware.push(logger);
+
   const enhancers = [];
 
   if (__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION__) {

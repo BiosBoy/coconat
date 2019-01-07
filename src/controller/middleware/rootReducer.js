@@ -1,3 +1,5 @@
+// root Redux reducers for Splite-Chunks mode,
+// probably you would always need this
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import app from '../../modules/reducers';

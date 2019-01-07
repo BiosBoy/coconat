@@ -5,10 +5,12 @@ export function* someSaga() {
   try {
     const payload = yield fetch('https://www.github.com');
 
-    // some payload from the responce recived
+    // throw an error if no payload received
     if (!payload) {
       throw new Error('Error in payload!');
     }
+
+    // some payload from the responce received
     yield put(someAsyncAction(payload));
   } catch (error) {
     throw new Error('Some error in sagas occured!');

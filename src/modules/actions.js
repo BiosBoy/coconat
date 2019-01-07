@@ -1,8 +1,8 @@
-import { COUNT_ADD, SOME_ASYNC_ACTION } from '../constants';
+import { SWITCH_IMAGE, SOME_ASYNC_ACTION } from '../constants';
 
-const addCount = count => ({
-  type: COUNT_ADD,
-  count
+const switchImage = imageID => ({
+  type: SWITCH_IMAGE,
+  imageID
 });
 
 const someAsyncAction = payload => ({
@@ -10,4 +10,4 @@ const someAsyncAction = payload => ({
   payload
 });
 
-export { addCount, someAsyncAction };
+export { switchImage, someAsyncAction };

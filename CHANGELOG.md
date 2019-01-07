@@ -1,6 +1,10 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 1.1.0
+ * Improved App Structure.
+ * Added Redux connected store in App.
+
 # 1.0.0
  * First stabel release!
  * Added tslint ans eslint inside compilation babel processes builds.

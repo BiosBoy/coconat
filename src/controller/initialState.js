@@ -1,6 +1,7 @@
 const initialState = {
   app: {
-    appName: 'reactStarterKit'
+    appName: 'CoConatBuider',
+    imageToShow: 1
   }
 };
 

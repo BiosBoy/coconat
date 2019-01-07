@@ -1,21 +1,15 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 
-import { Header, Footer, Body } from '../components';
-import styles from '../styles/index.scss';
+import CoreLayout from '../layout';
 
 const AppContainer = ({ store, history }) => {
   return (
-    <Provider store={store} history={history}>
+    <Provider store={store}>
       <ConnectedRouter history={history}>
-        <div className={styles.appWrapper}>
-          <Header />
-          <Route exact path='/' component={Body} />
-          <Footer />
-        </div>
+        <CoreLayout />
       </ConnectedRouter>
     </Provider>
   );

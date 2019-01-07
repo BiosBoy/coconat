@@ -1,3 +1,4 @@
+// Console logger for Redux Action dispatch fires
 import { createLogger } from 'redux-logger';
 
 const logger = createLogger({

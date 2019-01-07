@@ -4,7 +4,7 @@ import RedBox from 'redbox-react';
 
 import store from './controller/store';
 import history from './controller/history';
-import AppContainer from './container/index';
+import AppContainer from './containers/AppContainer';
 
 const ENTRY_POINT = document.querySelector('#react-app-root');
 
@@ -25,7 +25,7 @@ if (__DEV__) {
   // ========================================================
   const devRender = () => {
     if (module.hot) {
-      module.hot.accept('./container/index', () => render());
+      module.hot.accept('./containers/AppContainer', () => render());
     }
 
     render();

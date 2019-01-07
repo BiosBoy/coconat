@@ -1,15 +1,14 @@
 import { LOCATION_CHANGE } from 'connected-react-router';
-import { COUNT_ADD, SOME_ASYNC_ACTION } from '../constants';
+import { SWITCH_IMAGE, SOME_ASYNC_ACTION } from '../constants';
 import initialState from '../controller/initialState';
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [COUNT_ADD]: (state, action) => ({
+  [SWITCH_IMAGE]: (state, action) => ({
     ...state,
-    count: action.count,
-    countDoubl: action.count % 2 === 0 ? action.count : state.countDoubl
+    imageToShow: action.imageID
   }),
   [SOME_ASYNC_ACTION]: (state, action) => ({
     ...state,
