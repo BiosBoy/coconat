@@ -1,6 +1,6 @@
 
 
-# CoConat - Builder
+# CoConat - React Apps Builder
 ### Make custom React app development easly as never before!
 
 ![logo_image](https://raw.githubusercontent.com/BiosBoy/coconat/master/LOGO_COCONAT.jpg)
