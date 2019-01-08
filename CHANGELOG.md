@@ -1,6 +1,11 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 1.7.1
+ * Added Jest dev and peer packages.
+ * Fixed Jest testing environment.
+ * Minor improvements.
+
 # 1.4.0
  * Added Tests example in the App.
  * Fixed animation in App Component.

@@ -18,6 +18,6 @@ module.exports = {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.tsx?$': 'ts-jest'
   },
-  setupFiles: ['<rootDir>/setupTests.js', '<rootDir>/node_modules/whatwg-fetch/fetch.js'],
+  setupFiles: ['<rootDir>/setupTests.js'],
   snapshotSerializers: ['enzyme-to-json/serializer']
 };
