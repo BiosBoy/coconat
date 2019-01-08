@@ -9,3 +9,4 @@ package-lock.json
 .vscode
 .tmp
 .src
+lerna-debug.log

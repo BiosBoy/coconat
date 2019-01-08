@@ -1,6 +1,11 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 1.4.0
+ * Added Tests example in the App.
+ * Fixed animation in App Component.
+ * Updated babel packages.
+
 # 1.2.0
  * Added ServiceWorkers in App.
  * Added Added AnimationTransitionGroup v2 package for animation handling with example in Body Component.
