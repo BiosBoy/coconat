@@ -5,24 +5,25 @@
 :global {
   .mainImage-enter {
     opacity: 0;
+    position: absolute;
     transition: all 500ms linear;
-    transform: translateX(50%);
+    transform: translateX(-10%);
   }
 
   .mainImage-enter-active {
     opacity: 1;
-    transform: translateX(60%);
+    transform: translateX(0%);
   }
 
   .mainImage-exit {
-    transition: opacity 500ms linear;
-    transform: translateX(-60%);
+    transition: all 500ms linear;
+    transform: translateX(0%);
     opacity: 1;
   }
 
   .mainImage-exit-active {
     transition: all 500ms linear;
-    transform: translateX(-50%);
+    transform: translateX(10%);
     opacity: 0;
   }
 }
