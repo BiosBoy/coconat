@@ -1,6 +1,10 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 1.2.0
+ * Added ServiceWorkers in App.
+ * Added Added AnimationTransitionGroup v2 package for animation handling with example in Body Component.
+
 # 1.1.0
  * Improved App Structure.
  * Added Redux connected store in App.

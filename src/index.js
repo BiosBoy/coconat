@@ -18,6 +18,16 @@ const renderError = error => {
   ReactDOM.render(<RedBox error={error} />, ENTRY_POINT);
 };
 
+// register serviceWorkers if available
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('./serviceWorker.js')
+    .then(registration => {
+      console.log('Excellent, registered with scope: ', registration.scope);
+    })
+    .catch(e => console.error('ERROR IN SERVICE WORKERS: ', e));
+}
+
 // This code is excluded from production bundle
 if (__DEV__) {
   // ========================================================
