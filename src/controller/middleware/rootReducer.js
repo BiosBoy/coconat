@@ -1,10 +1,9 @@
-// root Redux reducers for Splite-Chunks mode,
-// probably you would always need this
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import app from '../../modules/reducers';
 import history from '../history';
 
+// root Redux reducer
 const makeRootReducer = asyncReducers => {
   return combineReducers({
     ...asyncReducers,
@@ -13,6 +12,7 @@ const makeRootReducer = asyncReducers => {
   });
 };
 
+// Splite-Chunks environment, probably you would always need this
 export const injectReducer = (store, { key, reducer }) => {
   if (Object.hasOwnProperty.call(store.asyncReducers, key)) return;
   store.asyncReducers[key] = reducer;

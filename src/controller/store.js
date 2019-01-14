@@ -5,6 +5,7 @@ import history from './history';
 
 import { logger, makeRootReducer, sagaMiddleware as saga, rootSaga, runSaga } from './middleware';
 
+// creating the root store config
 const rootStore = () => {
   const middleware = [];
 
@@ -19,12 +20,13 @@ const rootStore = () => {
 
   const enhancers = [];
 
+  // allow to use the redux browser plugin
   if (__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION__) {
     enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__());
   }
 
   // ======================================================
-  // Store Instantiation and HMR Setup
+  // Store Instantiation
   // ======================================================
   const store = createStore(
     makeRootReducer(),
@@ -35,6 +37,7 @@ const rootStore = () => {
     )
   );
 
+  // saga injecting during code-splitting
   store.runSaga = runSaga;
   runSaga(rootSaga);
   store.asyncReducers = {};
