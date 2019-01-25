@@ -28,7 +28,7 @@ So, by using this **Templater** you will save a lot of time and will stay focuse
 1. Clone the repo on your Machine by:
 
    ```
-    ssh clone https://github.com/BiosBoy/coconat.git
+    git clone https://github.com/BiosBoy/coconat.git
    ```
 2. Inside the root folder install all requeried packages of the **CoConat Builder** by command:
    ```
