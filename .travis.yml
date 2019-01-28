@@ -5,6 +5,7 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
 before_script:
   - yarn install
+  - yarn jest **/*.test.*
   - yarn start:dev
 node_js:
   - "10"
