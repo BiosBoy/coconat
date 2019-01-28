@@ -164,6 +164,14 @@ const stagePlugins = {
 // STAGE CONFIGURATION INJECTION! [DEVELOPMENT, PRODUCTION]
 // ------------------------------------
 const stageConfig = {
+  test: {
+    devtool: 'source-map',
+    stats: {
+      chunks: true,
+      chunkModules: true,
+      colors: true
+    }
+  },
   development: {
     devtool: '',
     stats: {

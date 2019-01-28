@@ -1,5 +1,12 @@
 ## Webpack4 - React16.7 Templater App
 
+# 1.8.2
+ * Fixed Test scripts suite.
+
+# 1.8.1
+ * Added travis-ci integration for automation build passing.
+ * Fixed Jest testing environment.
+ * Minor improvements.
 
 # 1.7.1
  * Added Jest dev and peer packages.
