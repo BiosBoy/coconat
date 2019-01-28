@@ -7,5 +7,16 @@ before_script:
   - yarn install
   - yarn testall
   - yarn start:dev
+jobs:  
+  include:
+    - stage: "Tests"                
+      name: "Unit Tests"            
+      script: yarn testall
+    - stage: "Development stage"
+      name: "Development Tests"
+      script: yarn start:dev
+    - stage: "Production stage"
+      name: "Production Tests"
+      script: yarn start:prod
 node_js:
   - "10"
