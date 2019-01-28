@@ -8,7 +8,7 @@
 [![GitHub package version](https://img.shields.io/badge/version-1.8.1-red.svg)](https://github.com/BiosBoy/coconat)
 [![Build Status](https://travis-ci.org/BiosBoy/coconat.svg?branch=master)](https://travis-ci.org/BiosBoy/coconat)
 
-[medium.com/tutorial](https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3) — CocoNat StartKit Builder Official Documentation Tutorial.
+[medium.com/CocoNat-StarterKit-Builder](https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3) — CocoNat StartKit Builder Official Documentation Tutorial.
 
 ![logo_image](https://raw.githubusercontent.com/BiosBoy/coconat/master/LOGO_COCONAT.jpg)
 
