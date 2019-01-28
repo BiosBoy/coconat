@@ -5,9 +5,7 @@
 
 [![Build Status](https://travis-ci.org/BiosBoy/coconat.svg?branch=master)](https://travis-ci.org/BiosBoy/coconat)
 
-See also:
-
-[medium.com/tutorial](https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3) — CocoNat documentation tutorial.
+See also: [medium.com/tutorial](https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3) — CocoNat documentation tutorial.
 
 ![logo_image](https://raw.githubusercontent.com/BiosBoy/coconat/master/LOGO_COCONAT.jpg)
 
