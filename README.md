@@ -1,6 +1,6 @@
 
 
-# CoConat - React Apps Builder
+# CoConat - React Apps Builder [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=You%20will%20never%20know%20how%20everything%20work%20but%20you%20should%20understand%20the%20system&url=https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3&via=svyat770&hashtags=react,webpack,babel,webdevelopment,developers)
 ### Make custom React app development easly as never before!
 
 [![Build Status](https://travis-ci.org/BiosBoy/coconat.svg?branch=master)](https://travis-ci.org/BiosBoy/coconat)
