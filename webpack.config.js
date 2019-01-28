@@ -173,11 +173,10 @@ const stageConfig = {
     }
   },
   development: {
-    devtool: '',
+    devtool: 'source-map',
     stats: {
-      chunks: false,
-      children: false,
-      chunkModules: false,
+      chunks: true,
+      chunkModules: true,
       colors: true
     }
   },

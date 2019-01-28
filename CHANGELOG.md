@@ -1,5 +1,8 @@
 ## Webpack4 - React16.7 Templater App
 
+# 1.8.3
+ * Fixed chunks info in Development mode.
+
 # 1.8.2
  * Fixed Test scripts suite.
 
