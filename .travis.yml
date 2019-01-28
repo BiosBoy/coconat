@@ -6,21 +6,10 @@ before_install:
 jobs:  
   include:
     - stage: "Tests"                
-      name: "Unit Tests"            
+      name: "Unit Test"            
       script: yarn unitTest
-    - stage: "Development stage"
-      name: "Development Tests"
-      script:
-       - yarn start:dev
-       - lsof -i :3000
-       - kill -9 <PID>
-    - stage: "Production stage"
-      name: "Production Tests"
-      script: yarn start:prod
-      script: killall -KILL node
-    - stage: "Test stage"
-      name: "Test Tests"
-      script: yarn start:test
-      script: killall -KILL node
+    - stage: "Compilation stage"
+      name: "Compilation Test"            
+      script: yarn compile
 node_js:
   - "10"
