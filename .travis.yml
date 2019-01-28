@@ -10,8 +10,9 @@ jobs:
       script: yarn unitTest
     - stage: "Development stage"
       name: "Development Tests"
-      script: yarn start:dev
-      script: killall -KILL node
+      script:
+       - yarn start:dev
+       - killall -KILL node
     - stage: "Production stage"
       name: "Production Tests"
       script: yarn start:prod
