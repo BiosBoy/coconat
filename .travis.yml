@@ -11,11 +11,14 @@ jobs:
     - stage: "Development stage"
       name: "Development Tests"
       script: yarn start:dev
+      script: killall -KILL node
     - stage: "Production stage"
       name: "Production Tests"
       script: yarn start:prod
+      script: killall -KILL node
     - stage: "Test stage"
       name: "Test Tests"
       script: yarn start:test
+      script: killall -KILL node
 node_js:
   - "10"
