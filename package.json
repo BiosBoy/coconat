@@ -39,7 +39,8 @@
   "scripts": {
     "start:dev": "better-npm-run start:dev",
     "start:prod": "better-npm-run start:prod",
-    "test": "better-npm-run test",
+    "start:test": "better-npm-run test",
+    "unitTest": "jest --config jest.config.js",
     "clean": "rimraf dist",
     "push": "npm run lint && git push",
     "compile": "better-npm-run compile",
@@ -69,7 +70,7 @@
         "DEBUG": "app:*"
       }
     },
-    "test": {
+    "start:test": {
       "command": "node server/server",
       "env": {
         "NODE_ENV": "test",

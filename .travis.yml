@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+jobs:  
+  include:
+    - stage: "Tests"                
+      name: "Unit Test"            
+      script: yarn unitTest
+    - stage: "Compilation stage"
+      name: "Compilation Test"            
+      script: yarn compile
+node_js:
+  - "10"

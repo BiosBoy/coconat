@@ -1,7 +1,14 @@
 
 
-# CoConat - React Apps Builder
+# CoConat - React Apps Builder [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=You%20will%20never%20know%20how%20everything%20work%20but%20you%20should%20understand%20the%20system&url=https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3&via=svyat770&hashtags=react,webpack,babel,webdevelopment,developers)
 ### Make custom React app development easly as never before!
+
+[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/BiosBoy/coconat/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://github.com/BiosBoy/coconat/blob/master/LICENSE)
+[![GitHub package version](https://img.shields.io/badge/version-1.8.1-red.svg)](https://github.com/BiosBoy/coconat)
+[![Build Status](https://travis-ci.org/BiosBoy/coconat.svg?branch=master)](https://travis-ci.org/BiosBoy/coconat)
+
+Check CocoNat StartKit Builder [Official Documentation Tutorial](https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3) on Medium.
 
 ![logo_image](https://raw.githubusercontent.com/BiosBoy/coconat/master/LOGO_COCONAT.jpg)
 
