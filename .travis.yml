@@ -12,7 +12,8 @@ jobs:
       name: "Development Tests"
       script:
        - yarn start:dev
-       - killall -KILL node
+       - lsof -i :3000
+       - kill -9 <PID>
     - stage: "Production stage"
       name: "Production Tests"
       script: yarn start:prod
