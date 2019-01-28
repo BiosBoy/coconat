@@ -3,6 +3,12 @@
 # CoConat - React Apps Builder
 ### Make custom React app development easly as never before!
 
+[![Build Status](https://travis-ci.org/BiosBoy/coconat.svg?branch=master)](https://travis-ci.org/BiosBoy/coconat)
+
+See also:
+
+[medium.com/tutorial](https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3) — CocoNat documentation tutorial.
+
 ![logo_image](https://raw.githubusercontent.com/BiosBoy/coconat/master/LOGO_COCONAT.jpg)
 
 This **Webpack4 + React16 Templater** is created from the point of view to solve developer day-to-day problems with app suits boilerplate creation. It has all what we need to start React app creation with rocket speed without worring about, like:
