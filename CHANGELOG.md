@@ -1,5 +1,10 @@
 ## Webpack4 - React16.7 Templater App
 
+
+# 1.9.1
+ * Added Code of Conduct and Pull Request Templates.
+ * Minor fixes.
+
 # 1.8.3
  * Fixed chunks info in Development mode.
 
