@@ -5,7 +5,7 @@
 
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/BiosBoy/coconat/blob/master/LICENSE)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://github.com/BiosBoy/coconat/blob/master/LICENSE)
-[![GitHub package version](https://img.shields.io/badge/version-1.8.1-red.svg)](https://github.com/BiosBoy/coconat)
+[![GitHub package version](https://img.shields.io/badge/version-2.0.0-red.svg)](https://github.com/BiosBoy/coconat)
 [![Build Status](https://travis-ci.org/BiosBoy/coconat.svg?branch=master)](https://travis-ci.org/BiosBoy/coconat)
 
 Check CocoNat StartKit Builder [Official Documentation Tutorial](https://medium.com/@svyat770/lets-kill-create-react-app-452cb55f77d3) on Medium.
