@@ -101,7 +101,7 @@ That's all what you need to start building your own project! Have fun and happy 
 ### App technical environment that are 100% support with:
  * Node 10.5
  * Yarn 1.9.4
- * Webpack 4.23.1
+ * Webpack 4.29.1
  * React 16.8
 
 ### App global package installing requirements:
