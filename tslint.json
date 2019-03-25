@@ -3,6 +3,7 @@
   "extends": [
     "tslint-config-airbnb",
     "tslint-eslint-rules",
+    "tslint-react-hooks",
     "tslint-react"
   ],
   "jsRules": {},
@@ -17,9 +18,10 @@
       "check-separator",
       "check-type"
     ],
+    "react-hooks-nesting": "error",
     "arrow-return-shorthand": [false],
     "semicolon": [true, "always", "ignore-interfaces"],
-    "space-in-parens": [true, "always"],
+    "space-in-parens": [false, "always", { "exceptions": [ "{}", "[]", "()", "empty" ] }],
     "block-spacing": [
       true,
       "never"

@@ -1,12 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { memo } from 'react';
 import styles from '../styles/index.scss';
 
-class Footer extends PureComponent {
-  render() {
-    return (
-      <div className={styles.appFooter}>App Footer</div>
-    );
-  }
-}
+const Footer = memo(() => {
+  return <div className={styles.appFooter}>App Footer</div>;
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;

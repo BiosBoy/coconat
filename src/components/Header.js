@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { memo } from 'react';
 import styles from '../styles/index.scss';
 
-class Header extends PureComponent {
-  render() {
-    return <div className={styles.appHeader}>App Headers</div>;
-  }
-}
+const Header = memo(() => {
+  return <div className={styles.appHeader}>App Headers</div>;
+});
+
+Header.displayName = 'Header';
 
 export default Header;

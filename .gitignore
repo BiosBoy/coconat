@@ -6,6 +6,7 @@ dist
 coverage
 .idea
 package-lock.json
+yarn-error.log
 .vscode
 .tmp
 .src
