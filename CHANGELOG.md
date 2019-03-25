@@ -1,5 +1,10 @@
 ## Webpack4 - React16.7 Templater App
 
+
+# 2.0.1
+ * Updated Webpack to 4.29.1 version.
+ * Removed .travis.ci file from git watch.
+
 # 2.0.0
  * Partiarly moved app to TypeScript v.3.3.4.
  * Major Update of react dependencies (react react-dom react-redux react-router react-router-dom redux).
@@ -10,6 +15,10 @@
  * Added react-hooks/exhaustive-deps dependency.
  * Moved space-in-parens rule in tslint config into disabled state.
  * Removed yarn-error.lock file.
+
+# 1.9.1
+ * Added Code of Conduct and Pull Request Templates.
+ * Minor fixes.
 
 # 1.9.0
  * Updated react, redux, react-redux dependencies.

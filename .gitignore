@@ -11,3 +11,4 @@ yarn-error.log
 .tmp
 .src
 lerna-debug.log
+.travis.yml
