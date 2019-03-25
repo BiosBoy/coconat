@@ -10,7 +10,7 @@
     "target": "es5",
     "jsx": "react",
     "moduleResolution": "node",
-    "lib": ["es6", "dom"],
+    "lib": ["es2015", "es6", "es2017", "dom"],
     "outDir": "./dist",
     "rootDir": "./src"
   },

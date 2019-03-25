@@ -2,7 +2,7 @@
   "name": "webpack4react17StarterKit",
   "version": "1.0.0",
   "description": "test stend to show how easy we can make code-splitting by in-box features in React 16.7 - Suspense and lazy.",
-  "main": "index.js",
+  "main": "index.tsx",
   "author": "Sviat Kuzhelev",
   "license": "MIT",
   "husky": {
@@ -39,39 +39,40 @@
   "scripts": {
     "start:dev": "better-npm-run start:dev",
     "start:prod": "better-npm-run start:prod",
-    "start:test": "better-npm-run test",
+    "start:test": "better-npm-run start:test",
     "unitTest": "jest --config jest.config.js",
     "clean": "rimraf dist",
     "push": "npm run lint && git push",
     "compile": "better-npm-run compile",
-    "lint": "prettier --single-quote --no-semi --print-width 120 --write '{src,tests}/**/*.js'",
+    "prettier": "prettier --single-quote --no-semi --print-width 120 --write '{src,tests}/**/*.{js,ts}'",
     "eslint": "eslint --quiet ../../.eslintrc",
+    "tslint": "tslint --fix -c tslint.json",
     "csslint": "stylelint **/*.scss --config ../../.stylelintrc"
   },
   "betterScripts": {
     "compile": {
-      "command": "node server/compiler",
+      "command": "node server/compiler.ts",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"
       }
     },
     "start:dev": {
-      "command": "node server/server",
+      "command": "node server/server.ts",
       "env": {
         "NODE_ENV": "development",
         "DEBUG": "app:*"
       }
     },
     "start:prod": {
-      "command": "node server/server",
+      "command": "node server/server.ts",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"
       }
     },
     "start:test": {
-      "command": "node server/server",
+      "command": "node server/server.ts",
       "env": {
         "NODE_ENV": "test",
         "DEBUG": "app:*"
@@ -85,11 +86,11 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@types/classnames": "^2.2.6",
-    "@types/enzyme": "^3.1.14",
-    "@types/enzyme-adapter-react-16": "^1.0.3",
-    "@types/jest": "^23.3.9",
+    "@types/enzyme": "^3.9.1",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.117",
-    "@types/node": "^10.12.1",
+    "@types/node": "^11.11.6",
     "@types/prop-types": "^15.5.6",
     "@types/react-dom": "^16.0.9",
     "@types/react-redux": "^6.0.9",
@@ -103,7 +104,8 @@
     "classnames": "^2.2.6",
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.8",
-    "enzyme": "^3.8.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-to-json": "^3.3.5",
     "eslint": "^5.11.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -113,11 +115,11 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.1",
-    "eslint-plugin-react-hooks": "^0.0.0",
+    "eslint-plugin-react-hooks": "^1.5.0",
     "husky": "^1.3.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
+    "jest": "^24.5.0",
+    "jest-cli": "^24.5.0",
     "jsonlint": "^1.6.3",
     "lerna": "^3.8.4",
     "lint-staged": "^8.1.0",
@@ -138,11 +140,12 @@
     "stylelint-no-unsupported-browser-features": "^3.0.2",
     "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.4.4",
-    "ts-jest": "^23.10.5",
+    "ts-jest": "^24.0.0",
     "tslint": "^5.12.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^3.6.0",
+    "tslint-react-hooks": "^2.0.0-alpha.1",
     "url-loader": "^1.1.2",
     "webpack-bundle-analyzer": "^3.0.3"
   },
@@ -171,9 +174,8 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^1.0.0",
     "connect-history-api-fallback": "^1.5.0",
-    "connected-react-router": "^6.1.0",
+    "connected-react-router": "^6.3.2",
     "debug": "^4.1.1",
-    "enzyme-adapter-react-16": "^1.7.1",
     "eslint-loader": "^2.1.1",
     "exports-loader": "^0.7.0",
     "history": "^4.7.2",
@@ -183,11 +185,11 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-redux": "^6.0.0",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-redux": "^6.0.1",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-transition-group": "^2.5.2",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
@@ -196,7 +198,7 @@
     "regenerator-runtime": "^0.13.1",
     "terser-webpack-plugin": "^1.2.1",
     "tslint-loader": "^3.5.4",
-    "typescript": "^3.2.2",
+    "typescript": "^3.3.4000",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2",

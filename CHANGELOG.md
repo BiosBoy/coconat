@@ -1,5 +1,19 @@
 ## Webpack4 - React16.7 Templater App
 
+# 2.0.0
+ * Partiarly moved app to TypeScript v.3.3.4.
+ * Major Update of react dependencies (react react-dom react-redux react-router react-router-dom redux).
+ * Added React Hooks Example inroduction in Boddy Component.
+ * Added es2017 lib in tsconfig.json for better namespaces handling.
+ * Added react-hooks linter to eslint configuration.
+ * Added react-hooks linter to tslint configuration.
+ * Added react-hooks/exhaustive-deps dependency.
+ * Moved space-in-parens rule in tslint config into disabled state.
+ * Removed yarn-error.lock file.
+
+# 1.9.0
+ * Updated react, redux, react-redux dependencies.
+
 # 1.8.3
  * Fixed chunks info in Development mode.
 
