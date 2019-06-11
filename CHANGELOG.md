@@ -1,6 +1,10 @@
 ## Webpack4 - React16.7 Templater App
 
 
+# 2.1.1
+ * Update UjlifyJS plugin correspond to its internal update.
+ * Improved distinguish between prod and dev version running via Hot Module Replacement.
+
 # 2.0.1
  * Updated Webpack to 4.29.1 version.
  * Removed .travis.ci file from git watch.

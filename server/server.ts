@@ -1,5 +1,5 @@
 // import global vars for a whole app
-require('../globals');
+const globals = require('../globals');
 
 const path = require('path');
 const browserSync = require('browser-sync');
@@ -15,13 +15,19 @@ const bundler = webpack(webpackConfig);
 // ========================================================
 const devMiddlewareOptions = {
   publicPath: webpackConfig.output.publicPath,
-  hot: true,
+  hot: globals.__DEV__ ? true : false,
   headers: { 'Access-Control-Allow-Origin': '*' }
 };
 
 // ========================================================
 // Server Configuration
 // ========================================================
+const webpackMiddleware = [webpackDevMiddleware(bundler, devMiddlewareOptions)];
+
+if (globals.__DEV__) {
+  webpackMiddleware.push(webpackHotMiddleware(bundler));
+}
+
 browserSync({
   open: false,
   ghostMode: {
@@ -31,11 +37,7 @@ browserSync({
   },
   server: {
     baseDir: path.resolve(__dirname, '../src'),
-    middleware: [
-      historyApiFallback(),
-      webpackDevMiddleware(bundler, devMiddlewareOptions),
-      webpackHotMiddleware(bundler)
-    ]
+    middleware: [historyApiFallback(), ...webpackMiddleware]
   },
   files: [
     'src/../*.tsx',
