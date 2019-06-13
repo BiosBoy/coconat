@@ -15,7 +15,7 @@ const bundler = webpack(webpackConfig);
 // ========================================================
 const devMiddlewareOptions = {
   publicPath: webpackConfig.output.publicPath,
-  hot: globals.__DEV__ ? true : false,
+  hot: __DEV__ ? true : false,
   headers: { 'Access-Control-Allow-Origin': '*' }
 };
 
@@ -24,7 +24,7 @@ const devMiddlewareOptions = {
 // ========================================================
 const webpackMiddleware = [webpackDevMiddleware(bundler, devMiddlewareOptions)];
 
-if (globals.__DEV__) {
+if (__DEV__) {
   webpackMiddleware.push(webpackHotMiddleware(bundler));
 }
 
