@@ -221,10 +221,6 @@ const createConfig = () => {
     app: __DEV__ ? appEntryPoint.concat('webpack-hot-middleware/client?path=/__webpack_hmr') : appEntryPoint
   };
 
-  webpackConfig.entry = {
-    app: appEntryPoint
-  };
-
   // ------------------------------------
   // Bundle externals
   // ------------------------------------
