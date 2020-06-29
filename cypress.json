@@ -1,6 +1,6 @@
 {
   "projectId": "euwho3",
-  "baseUrl": "https://google.com", // replace this url by your real world app
+  "baseUrl": "https://google.com",
   "viewportWidth": 1200,
   "viewportHeight": 1100,
   "fixturesFolder": "cypress/mocks",
