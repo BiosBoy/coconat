@@ -1,5 +1,12 @@
-## Webpack4 - React16.7 Templater App
+## Webpack4 - React16 Starter Kit
 
+
+# 3.0.0
+ * Bumped up all outdated deps.
+ * Removed TSLint in favor of ESLint for single source of truth.
+ * Added proxy middleware starter right into the app.
+ * Added SSL certificates and ability to work over HTTPS on localhost.
+ * Improved SCSS assets serving in development mode by placing them right into bundles instead of hardcode injection.
 
 # 2.1.2
  * Fixed HMR work in development mode.

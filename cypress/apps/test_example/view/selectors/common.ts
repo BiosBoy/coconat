@@ -1,0 +1,6 @@
+export const start = () => cy.get('button:contains("Start fight")')
+export const escape = () => cy.get('button:contains("ESCAPE")')
+export const leave = () => cy.get('button:contains("leave")')
+export const mug = () => cy.get('button:contains("mug")')
+export const hosp = () => cy.get('button:contains("hosp")')
+export const continues = () => cy.get('button:contains("CONTINUE")')

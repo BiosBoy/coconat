@@ -1,0 +1,12 @@
+{
+  "projectId": "euwho3",
+  "baseUrl": "https://google.com", // replace this url by your real world app
+  "viewportWidth": 1200,
+  "viewportHeight": 1100,
+  "fixturesFolder": "cypress/mocks",
+  "integrationFolder": "cypress/e2e",
+  "screenshotsFolder": "cypress/screenshots",
+  "videosFolder": "cypress/videos",
+  "pluginsFile": "cypress/plugins/index.ts",
+  "supportFile": "cypress/support/index.ts"
+}
