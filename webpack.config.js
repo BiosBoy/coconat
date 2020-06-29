@@ -55,12 +55,12 @@ const rules = [
   {
     test: /.scss$/,
     use: [
-      {
+      __DEV__ || __PROD__ ? {
         loader: MiniCssExtractPlugin.loader,
         options: {
           hmr: __DEV__
         }
-      },
+      } : 'style-loader',
       {
         loader: 'css-loader',
         options: {

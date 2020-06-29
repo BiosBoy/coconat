@@ -6,7 +6,7 @@ import { rivalsUI, winFight, stalematedFight, escapedFight } from '../apps/attac
 context('Attack App', () => {
   beforeEach(() => {
     setCookies({ type: 'basic' })
-    makeLogin({ email: 'maryan060@gmail.com', password: 'period312' }).basic()
+    makeLogin({ email: 'mar@gmail.com', password: 'per' }).basic()
   })
 
   it('check rivals UI', () => {
