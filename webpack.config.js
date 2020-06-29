@@ -1,5 +1,5 @@
 // import global vars for a whole app
-require('./globals');
+const globals = require('./globals');
 
 const path = require('path');
 const webpack = require('webpack');
@@ -64,9 +64,9 @@ const rules = [
       {
         loader: 'css-loader',
         options: {
-          importLoaders: 2,
-          modules: true,
-          localIdentName: '[local]___[hash:base64:5]'
+          modules: {
+            localIdentName: '[local]___[hash:base64:5]'
+          }
         }
       },
       'postcss-loader',
@@ -256,7 +256,8 @@ const createConfig = () => {
     new webpack.DefinePlugin({
       __DEV__,
       __PROD__,
-      __TEST__
+      __TEST__,
+      ...globals
     }),
     ...stagePlugins[__NODE_ENV__]
   ];

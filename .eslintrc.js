@@ -486,7 +486,7 @@ module.exports = {
         ],
         "semi": [
             "error",
-            "never"
+            "always"
         ],
         "prefer-const": "error",
         "no-param-reassign": [
@@ -2285,7 +2285,7 @@ module.exports = {
             "error"
         ],
         // "@typescript-eslint/no-invalid-this": "error",
-        "@typescript-eslint/class-name-casing": "error",
+        // "@typescript-eslint/class-name-casing": "error",
         "@typescript-eslint/no-unused-vars":  [2, { args: 'none' }],
         "@typescript-eslint/consistent-type-definitions": "off",
         "@typescript-eslint/explicit-member-accessibility": [
@@ -2425,7 +2425,7 @@ module.exports = {
         ],
         "@typescript-eslint/semi": [
             "error",
-            "never"
+            "always"
         ],
         "no-null/no-null": "off",
         "prefer-arrow/prefer-arrow-functions": "warn",

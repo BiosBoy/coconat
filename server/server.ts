@@ -1,6 +1,3 @@
-// import global vars for a whole app
-const globals = require('../globals');
-
 const path = require('path');
 const browserSync = require('browser-sync');
 const historyApiFallback = require('connect-history-api-fallback');
@@ -8,7 +5,7 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-const proxyMiddleware = require('./proxy')
+const proxyMiddleware = require('./proxy.ts');
 const webpackConfig = require('../webpack.config.js');
 
 const bundler = webpack(webpackConfig);
@@ -18,7 +15,7 @@ const bundler = webpack(webpackConfig);
 // ========================================================
 const devMiddlewareOptions = {
   publicPath: webpackConfig.output.publicPath,
-  hot: __DEV__ ? true : false,
+  hot: __DEV__,
   headers: { 'Access-Control-Allow-Origin': '*' }
 };
 

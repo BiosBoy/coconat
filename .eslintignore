@@ -6,3 +6,4 @@ src/index.html
 *.cssmodule.d.ts
 typings.d.ts
 tsconfig.json
+.eslintrc.js
