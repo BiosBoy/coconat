@@ -7,7 +7,10 @@ const historyApiFallback = require('connect-history-api-fallback');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+
+const proxyMiddleware = require('./proxy')
 const webpackConfig = require('../webpack.config.js');
+
 const bundler = webpack(webpackConfig);
 
 // ========================================================
@@ -30,6 +33,11 @@ if (__DEV__) {
 
 browserSync({
   open: false,
+  cors: false,
+  https: {
+    key: path.resolve(__dirname, '../ssl/localhost.key'),
+    cert: path.resolve(__dirname, '../ssl/localhost.crt')
+  },
   ghostMode: {
     clicks: false,
     forms: false,
@@ -37,7 +45,7 @@ browserSync({
   },
   server: {
     baseDir: path.resolve(__dirname, '../src'),
-    middleware: [historyApiFallback(), ...webpackMiddleware]
+    middleware: [historyApiFallback(), ...proxyMiddleware, ...webpackMiddleware]
   },
   files: [
     'src/../*.tsx',
