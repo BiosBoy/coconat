@@ -55,7 +55,12 @@ const rules = [
   {
     test: /.scss$/,
     use: [
-      __PROD__ ? MiniCssExtractPlugin.loader : 'style-loader',
+      {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          hmr: __DEV__
+        }
+      },
       {
         loader: 'css-loader',
         options: {
@@ -139,6 +144,10 @@ const stagePlugins = {
       inject: 'body',
       minify: false,
       chunksSortMode: 'auto'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
