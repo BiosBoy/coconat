@@ -20,13 +20,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+   
+    - name: Installing Yarn and Lerna
     - run: npm install -g yarn lerna
-#     - run: npm i
+      
+    - name: Bootstaping repo with Lerna
     - run: yarn install
-#     - run: yarn storybook
-#     - run: yarn jest ./shared
+      
+    - name: Unit Testing
     - run: yarn jest
