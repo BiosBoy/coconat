@@ -28,5 +28,5 @@ jobs:
 #     - run: npm i
     - run: yarn install
 #     - run: yarn storybook
-    - run: yarn jest ./shared
-
+#     - run: yarn jest ./shared
+    - run: yarn jest
