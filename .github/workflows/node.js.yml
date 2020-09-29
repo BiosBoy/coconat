@@ -26,7 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g yarn lerna
 #     - run: npm i
-    - run: yarn lerna:bootstrap
+    - run: yarn install
 #     - run: yarn storybook
     - run: yarn jest ./shared
 
