@@ -1,0 +1,97 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Linting
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  linting:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+
+    - name: Staring Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Restoring Yarn cache
+      uses: actions/cache@v2
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+    - name: Bootstraping packages
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      run: yarn install
+
+    - name: Get file changes
+      id: get_file_changes
+      uses: trilom/file-changes-action@v1.2.3
+      with:
+        output: ' '
+
+    - name: Echo file changes
+      id: hello
+      run: |
+            echo Added files: ${{ steps.get_file_changes.outputs.files_added }}
+            echo Changed files: ${{ steps.get_file_changes.outputs.files_modified }}
+            echo Removed files: ${{ steps.get_file_changes.outputs.files_removed }}
+
+    - name: Prettier Checking
+      if: ${{ always() && (steps.get_file_changes.outputs.files_added || steps.get_file_changes.outputs.files_modified) }}
+      run: yarn prettier --config ./prettier.config.js --ignore-path ./.prettierignore  ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }} --fix
+
+    - name: ESLint Checking
+      if: ${{ always() && (steps.get_file_changes.outputs.files_added || steps.get_file_changes.outputs.files_modified) }}
+      run: yarn eslint --config ./.eslintrc.js --ignore-path ./.eslintignore ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }} --fix
+
+    - name: TSLint Checking
+      if: ${{ always() && (steps.get_file_changes.outputs.files_added || steps.get_file_changes.outputs.files_modified) }}
+      run: yarn tslint --config ./tslint.json -e "**/*.(js|jsx|css|scss|html|md|json|yml)" ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }} --fix
+
+    - name: StyleLint Checking
+      if: ${{ always() && (steps.get_file_changes.outputs.files_added || steps.get_file_changes.outputs.files_modified) }}
+      run: yarn stylelint --config ./.stylelintrc  --ignore-path ./.stylelintignore --allow-empty-input ${{ steps.get_file_changes.outputs.files_added }} ${{ steps.get_file_changes.outputs.files_modified }} --fix
+
+    - name: Commit changes
+      if: always()
+      uses: stefanzweifel/git-auto-commit-action@v4.1.2
+      with:
+          commit_message: Apply formatting changes
+#           branch: ${{ github.head_ref }}
+
+    - name: Slack Notification
+      uses: 8398a7/action-slack@v3.8.0
+      if: failure()
+      with:
+        status: custom
+        fields: workflow,job,commit,repo,ref,author,took
+        custom_payload: |
+          {
+            username: 'React-Apps-CI',
+            icon_emoji: ':react:',
+            author_name: 'Linting Test',
+            attachments: [{
+              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+              text: `CI Task: ${process.env.AS_WORKFLOW}\ncommit: (${process.env.AS_COMMIT}) ${{ github.event_name }} ${{ job.status }}. Initiated by ${process.env.AS_AUTHOR} in ${process.env.AS_TOOK}`,
+            }]
+          }
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        MATRIX_CONTEXT: ${{ toJson(matrix) }}
+
