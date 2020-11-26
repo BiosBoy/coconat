@@ -1,0 +1,17 @@
+*.yml
+*.css
+*.scss
+*.d.ts
+*.md
+*.json
+*.yml
+.prettierignore
+.eslintignore
+.stylelintignore
+.eslintrc.js
+*.yml
+*.html
+.env
+*.json
+*.lock
+*.ejs

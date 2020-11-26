@@ -5,21 +5,29 @@
 root = true
 
 [*]
-# Indentation style
-# Possible values - tab, space
-indent_style = space
-
-# Indentation size in single-spaced characters
-# Possible values - an integer, tab
-indent_size = 2
+# File character encoding
+# Possible values - latin1, utf-8, utf-16be, utf-16le
+charset = utf-8
 
 # Line ending file format
 # Possible values - lf, crlf, cr
 end_of_line = lf
 
-# File character encoding
-# Possible values - latin1, utf-8, utf-16be, utf-16le
-charset = utf-8
+# Indentation style
+# Possible values - tab, space
+indent_style = space
+
+# Indentation size in single-spaced characters
+# Space Possible values - 1, 2, 4, 8
+indent_size = 2
+
+# Max line length
+# Possible values - integer, false
+max_line_length = 120
+
+# String quote type
+# Possible values - single, double
+quote_type = single
 
 # Denotes whether to trim whitespace at the end of lines
 # Possible values - true, false
