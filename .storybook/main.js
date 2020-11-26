@@ -52,10 +52,7 @@ module.exports = {
                 loader: 'css-modules-typescript-loader'
               },
               {
-                loader: 'css-loader',
-                modules: {
-                  localIdentName: '[local]___[hash:base64:5]'
-                }
+                loader: 'css-loader'
               },
               {
                 loader: 'postcss-loader'
