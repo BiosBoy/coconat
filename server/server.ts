@@ -1,31 +1,30 @@
-const path = require('path');
-const browserSync = require('browser-sync');
-const historyApiFallback = require('connect-history-api-fallback');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
+const path = require('path')
+const browserSync = require('browser-sync')
+const historyApiFallback = require('connect-history-api-fallback')
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
 
-const proxyMiddleware = require('./proxy.ts');
-const webpackConfig = require('../webpack.config.js');
+const proxyMiddleware = require('./proxy.ts')
+const webpackConfig = require('../webpack.config.js')
 
-const bundler = webpack(webpackConfig);
+const bundler = webpack(webpackConfig)
 
 // ========================================================
 // WEBPACK MIDDLEWARE CONFIGURATION
 // ========================================================
 const devMiddlewareOptions = {
   publicPath: webpackConfig.output.publicPath,
-  hot: __DEV__,
   headers: { 'Access-Control-Allow-Origin': '*' }
-};
+}
 
 // ========================================================
 // Server Configuration
 // ========================================================
-const webpackMiddleware = [webpackDevMiddleware(bundler, devMiddlewareOptions)];
+const webpackMiddleware = [webpackDevMiddleware(bundler, devMiddlewareOptions)]
 
 if (__DEV__) {
-  webpackMiddleware.push(webpackHotMiddleware(bundler));
+  webpackMiddleware.push(webpackHotMiddleware(bundler))
 }
 
 browserSync({
@@ -53,4 +52,4 @@ browserSync({
     'src/../*.scss',
     'src/../*.html'
   ]
-});
+})
