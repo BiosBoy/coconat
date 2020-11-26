@@ -1,6 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
-import createSagaMiddleware from 'redux-saga';
 import initialState from './initialState';
 
 import history from './history';
@@ -8,10 +7,8 @@ import history from './history';
 import logger from './helpers/reduxLogger';
 import activeStoreHMR from './helpers/storeHMR';
 
-import { rootSaga } from './middleware/rootSaga';
+import sagaMiddleware, { runSaga, rootSaga } from './middleware/rootSaga';
 import rootReducer from './middleware/rootReducer';
-
-const sagaMiddleware = createSagaMiddleware();
 
 // creating the root store config
 const rootStore = () => {
@@ -38,10 +35,9 @@ const rootStore = () => {
   // ======================================================
   const store = createStore(rootReducer(), initialState, compose(applyMiddleware(...middleware), ...enhancers));
 
-  // saga injecting during code-splitting
-  sagaMiddleware.run(rootSaga);
   store.asyncReducers = {};
 
+  runSaga(rootSaga);
   activeStoreHMR(store);
 
   return store;
