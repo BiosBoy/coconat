@@ -50,7 +50,9 @@
     "csslint": "stylelint **/*.scss --config ../../.stylelintrc",
     "lerna:init": "lerna init",
     "lerna:bootstrap": "lerna bootstrap",
-    "cypress:open": "better-npm-run cypress"
+    "cypress:open": "better-npm-run cypress",
+    "storybook:start": "better-npm-run storybook:start",
+    "storybook:build": "better-npm-run storybook:build"
   },
   "betterScripts": {
     "compile": {
@@ -86,6 +88,20 @@
       "env": {
         "DEBUG": "cypress:webpack:stats"
       }
+    },
+    "storybook:start": {
+      "command": "start-storybook -c .storybook -s ./public -p 6006 --https --ssl-key ./server/ssl/localhost.key --ssl-cert ./server/ssl/localhost.crt",
+      "env": {
+        "DEBUG": "storybook:*",
+        "NODE_ENV": "development"
+      }
+    },
+    "storybook:build": {
+      "command": "NODE_PATH=src build-storybook -c .storybook -s ./public",
+      "env": {
+        "DEBUG": "storybook:*",
+        "NODE_ENV": "production"
+      }
     }
   },
   "repository": {
@@ -93,6 +109,10 @@
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^5.4.11",
+    "@storybook/addon-actions": "^6.1.6",
+    "@storybook/addon-essentials": "^6.1.6",
+    "@storybook/addon-links": "^6.1.6",
+    "@storybook/react": "^6.1.6",
     "@types/classnames": "^2.2.11",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
@@ -191,6 +211,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "connect-history-api-fallback": "^1.6.0",
     "connected-react-router": "^6.8.0",
+    "css-modules-typescript-loader": "^4.0.1",
     "debug": "^4.3.1",
     "eslint-loader": "^4.0.2",
     "exports-loader": "^1.1.1",

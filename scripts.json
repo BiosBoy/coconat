@@ -1,0 +1,92 @@
+[
+  {
+      "name": "start:<%app_type%>:<%app_id%>",
+      "command": "node ./bin/view && node ./bin/server",
+      "env": {
+          "NODE_ENV": "development",
+          "APP_ID": "<%app_id%>",
+          "APP_TYPE": "<%app_type%>",
+          "DEBUG": "app:*"
+      }
+  },
+  {
+    "name": "test:<%app_type%>:<%app_id%>",
+    "command": "yarn jest ./<%app_type%>/<%app_id%>",
+    "env": {
+        "APP_ID": "<%app_id%>"
+    }
+  },
+  {
+    "name": "lint:<%app_type%>:<%app_id%>",
+    "command": "yarn prettier --config ./prettier.config.js <%app_type%>/<%app_id%>/**/[a-zA-Z]+.\"(js|ts|tsx)\" --write && yarn eslint -c ./.eslintrc.js <%app_type%>/<%app_id%>/src/**/*.+\"(js|jsx|ts|tsx)\" --fix && yarn tslint -c ./tsconfig_tslint.json -e \"**/__test__/**\" <%app_type%>/<%app_id%>/src/**/[a-zA-Z]+.\"(ts|tsx)\" --fix && yarn stylelint <%app_type%>/<%app_id%>/src/**/*.\"(cssmodule|scss)\" --config ./.stylelintrc --fix"
+  },
+  {
+    "name": "analyze:<%app_type%>:<%app_id%>",
+    "command": "node ./bin/view && node ./bin/server",
+    "env": {
+        "NODE_ENV": "test",
+        "APP_ID": "<%app_id%>",
+        "APP_TYPE": "<%app_type%>",
+        "DEBUG": "app:*"
+    }
+  },
+  {
+    "name": "compile:<%app_type%>:<%app_id%>",
+    "command": "node ./bin/view && node ./bin/compiler",
+    "env": {
+        "NODE_ENV": "production",
+        "APP_ID": "<%app_id%>",
+        "APP_TYPE": "<%app_type%>",
+        "DEBUG": "app:*"
+    }
+  },
+  {
+    "name": "deploy:<%app_type%>:<%app_id%>",
+    "command": "node ./utils/setENV && node ./bin/eraser && node ./bin/view && node ./bin/compiler && node ./bin/uploader",
+    "env": {
+        "NODE_ENV": "production",
+        "APP_ID": "<%app_id%>",
+        "APP_TYPE": "<%app_type%>",
+        "DEBUG": "app:*",
+        "appSurroundRunningMode": "remote"
+    }
+  },
+  {
+    "name": "upload:<%app_type%>:<%app_id%>",
+    "command": "node ./utils/setENV && node ./bin/view && node ./bin/uploader",
+    "env": {
+        "NODE_ENV": "production",
+        "APP_ID": "<%app_id%>",
+        "APP_TYPE": "<%app_type%>",
+        "DEBUG": "app:*",
+        "appSurroundRunningMode": "remote"
+    }
+  },
+  {
+    "name": "storybook:start",
+    "command": "start-storybook -c .storybook -s ./public -p 6006 --https --ssl-key ./ssl/localhost.key --ssl-cert ./ssl/localhost.crt",
+    "env": {
+        "DEBUG": "storybook:*",
+        "NODE_ENV": "development"
+    }
+  },
+  {
+    "name": "storybook:build",
+    "command": "NODE_PATH=src build-storybook -c .storybook -s ./public",
+    "env": {
+        "DEBUG": "storybook:*",
+        "NODE_ENV": "production"
+    }
+  },
+  {
+    "name": "cypress:open",
+    "command": "cypress open",
+    "env": {
+        "DEBUG": "cypress:webpack:stats"
+    }
+  },
+  {
+    "name": "cypress:record",
+    "command": "cypress run --browser chrome --group torn --record --key 561d75cf-17ff-4347-a676-81ba2854d0e1"
+  }
+]
