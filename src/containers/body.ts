@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { Body } from '../../components'
-import { switchImage } from '../../controller/actions/actions'
+import { Body } from '../components'
+import { switchImage } from '../controller/actions'
 
 interface ISwitchImage {
   type: string

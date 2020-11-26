@@ -3,7 +3,7 @@ import { Route, withRouter } from 'react-router-dom';
 
 import { Header, Footer } from '../components';
 
-import { Body } from '../containers/Wrappers';
+import Body from '../containers/body';
 import styles from '../styles/index.scss';
 
 const CoreLayout = () => {

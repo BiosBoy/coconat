@@ -4,13 +4,13 @@ import RedBox from 'redbox-react';
 
 import store from './store/store';
 import history from './store/history';
-import AppContainer from './containers/AppContainer';
+import AppProvider from './provider/index';
 
 const ENTRY_POINT = document.querySelector('#react-app-root');
 
 // creating starting endpoint for app.
 const render = () => {
-  ReactDOM.render(<AppContainer store={store} history={history} />, ENTRY_POINT);
+  ReactDOM.render(<AppProvider store={store} history={history} />, ENTRY_POINT);
 };
 
 // this will help us understand where the problem is located once app will fall.
@@ -34,20 +34,18 @@ if (__DEV__) {
   // ========================================================
   // DEVELOPMENT STAGE! HOT MODULE REPLACE ACTIVATION!
   // ========================================================
-  const devRender = () => {
-    console.log(module, 'module');
+  // const devRender = () => {
+  //   // works project-wide for now
+  //   // if (module.hot) {
+  //   //   module.hot.accept('./provider/index', () => render());
+  //   // }
 
-    // works project-wide for now
-    // if (module.hot) {
-    //   module.hot.accept('./containers/AppContainer', () => render());
-    // }
-
-    render();
-  };
+  //   render();
+  // };
 
   // Wrap render in try/catch
   try {
-    devRender();
+    render();
   } catch (error) {
     console.error(error);
     renderError(error);

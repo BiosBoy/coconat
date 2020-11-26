@@ -1,11 +1,17 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
+import createSagaMiddleware from 'redux-saga';
 import initialState from './initialState';
+
 import history from './history';
 
 import logger from './helpers/reduxLogger';
-import rootSaga, { runSaga } from './middleware/rootSaga';
+import activeStoreHMR from './helpers/storeHMR';
+
+import { rootSaga } from './middleware/rootSaga';
 import rootReducer from './middleware/rootReducer';
+
+const sagaMiddleware = createSagaMiddleware();
 
 // creating the root store config
 const rootStore = () => {
@@ -15,7 +21,7 @@ const rootStore = () => {
   middleware.push(routerMiddleware(history));
 
   // Adding async Saga actions environment
-  middleware.push(rootSaga);
+  middleware.push(sagaMiddleware);
 
   // Adding console logger for Redux
   middleware.push(logger);
@@ -33,9 +39,10 @@ const rootStore = () => {
   const store = createStore(rootReducer(), initialState, compose(applyMiddleware(...middleware), ...enhancers));
 
   // saga injecting during code-splitting
-  store.runSaga = runSaga;
-  runSaga(rootSaga);
+  sagaMiddleware.run(rootSaga);
   store.asyncReducers = {};
+
+  activeStoreHMR(store);
 
   return store;
 };

@@ -1,5 +1,5 @@
 import { put } from 'redux-saga/effects';
-import { someAsyncAction } from '../actions/actions';
+import { someAsyncAction } from '../actions';
 
 export function* saga() {
   try {
