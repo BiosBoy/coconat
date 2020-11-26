@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
-import { someAsyncAction } from '../actions';
+import { someAsyncAction } from '../actions/actions';
 
-export function* someSaga() {
+export function* saga() {
   try {
     const payload = yield fetch('https://www.github.com');
 
@@ -17,4 +17,4 @@ export function* someSaga() {
   }
 }
 
-export default someSaga;
+export default saga;

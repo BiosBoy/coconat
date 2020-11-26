@@ -1,6 +1,6 @@
 import { LOCATION_CHANGE } from 'connected-react-router';
-import { SWITCH_IMAGE, SOME_ASYNC_ACTION } from '../constants';
-import initialState from '../controller/initialState';
+import { SWITCH_IMAGE, SOME_ASYNC_ACTION } from '../../constants';
+import initialState from '../../store/initialState';
 
 // ------------------------------------
 // Action Handlers

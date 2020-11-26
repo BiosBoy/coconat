@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-import app from '../../modules/reducers';
+import app from '../../controller/reducers/reducers';
 import history from '../history';
 
 // root Redux reducer
-const makeRootReducer = asyncReducers => {
+const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     ...asyncReducers,
     app,

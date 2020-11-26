@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RedBox from 'redbox-react';
 
-import store from './controller/store';
-import history from './controller/history';
+import store from './store/store';
+import history from './store/history';
 import AppContainer from './containers/AppContainer';
 
 const ENTRY_POINT = document.querySelector('#react-app-root');

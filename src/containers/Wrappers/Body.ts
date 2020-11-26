@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { Body } from '../../components';
-import { switchImage } from '../../modules/actions';
+import { connect } from 'react-redux'
+import { Body } from '../../components'
+import { switchImage } from '../../controller/actions/actions'
 
 interface ISwitchImage {
   type: string
@@ -16,13 +16,10 @@ interface IStore {
 
 const mapStateToProps = (state: IStore) => ({
   imageToShow: state.app.imageToShow
-});
+})
 
 const mapDispatchToProps = (dispatch: IStore['dispatch']) => ({
   switchImage: (imageID: ISwitchImage['imageID']) => dispatch(switchImage(imageID))
-});
+})
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Body);
+export default connect(mapStateToProps, mapDispatchToProps)(Body)
