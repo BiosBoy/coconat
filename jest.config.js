@@ -11,7 +11,7 @@ module.exports = {
   },
   verbose: true,
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$',
-  testPathIgnorePatterns: ['/node_modules/', '/__tests__/mocks/.*'],
+  testPathIgnorePatterns: ['/node_modules/', '/__tests__/mocks/.*', '/cypress/'],
   coveragePathIgnorePatterns: ['typings.d.ts'],
   transformIgnorePatterns: ['.*(node_modules).*$'],
   transform: {

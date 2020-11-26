@@ -11,8 +11,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "lib": ["es2015", "es6", "es2017", "dom"],
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "outDir": "./dist"
   },
   "typeAcquisition": {
     "enable": true
@@ -29,6 +28,7 @@
   "exclude": [
     "node_modules",
     "**/*.test.ts",
+    "cypress",
     "server",
     "dist"
   ]

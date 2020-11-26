@@ -2,6 +2,22 @@
   position: relative;
 }
 
+.textLabel {
+  color: #111;
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
 :global {
   .mainImage-enter {
     opacity: 0;

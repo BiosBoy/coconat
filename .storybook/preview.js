@@ -1,11 +1,7 @@
-import centered from '@storybook/addon-centered'
+import centered from '@storybook/addon-centered/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import { withMobileMode } from './addons'
 
 import { BACKGROUNDS } from './constants'
-
-import './styles/reset.css'
-import './styles/storybook.scss'
 
 export const parameters = {
   backgrounds: {
@@ -14,4 +10,4 @@ export const parameters = {
   }
 }
 
-export const decorators = [withKnobs, withMobileMode, centered]
+export const decorators = [withKnobs, centered]

@@ -12,3 +12,4 @@ yarn-error.log
 .src
 lerna-debug.log
 .travis.yml
+storybook-static

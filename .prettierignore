@@ -5,6 +5,7 @@
 *.md
 *.json
 *.yml
+.editorconfig
 .prettierignore
 .eslintignore
 .stylelintignore
@@ -15,3 +16,4 @@
 *.json
 *.lock
 *.ejs
+.DS_Store

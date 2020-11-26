@@ -11,6 +11,7 @@ src/index.html
 *.d.ts
 typings.d.ts
 tsconfig.json
+.editorconfig
 .prettierignore
 .eslintignore
 .stylelintignore
@@ -21,3 +22,4 @@ tsconfig.json
 *.json
 *.lock
 *.ejs
+.DS_Store
