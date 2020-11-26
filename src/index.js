@@ -1,22 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import RedBox from 'redbox-react';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import RedBox from 'redbox-react'
 
-import store from './store/store';
-import history from './store/history';
-import AppProvider from './provider/index';
+import store from './store/store'
+import history from './store/history'
+import AppProvider from './provider/index'
 
-const ENTRY_POINT = document.querySelector('#react-app-root');
+const ENTRY_POINT = document.querySelector('#react-app-root')
 
 // creating starting endpoint for app.
 const render = () => {
-  ReactDOM.render(<AppProvider store={store} history={history} />, ENTRY_POINT);
-};
+  ReactDOM.render(<AppProvider store={store} history={history} />, ENTRY_POINT)
+}
 
 // this will help us understand where the problem is located once app will fall.
 const renderError = (error) => {
-  ReactDOM.render(<RedBox error={error} />, ENTRY_POINT);
-};
+  ReactDOM.render(<RedBox error={error} />, ENTRY_POINT)
+}
 
 // register serviceWorkers if available
 // we don't need them for now
@@ -45,14 +45,14 @@ if (__DEV__) {
 
   // Wrap render in try/catch
   try {
-    render();
+    render()
   } catch (error) {
-    console.error(error);
-    renderError(error);
+    console.error(error)
+    renderError(error)
   }
 } else {
   // ========================================================
   // PRODUCTION GO!
   // ========================================================
-  render();
+  render()
 }

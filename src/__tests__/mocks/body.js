@@ -1,4 +1,4 @@
 export default {
   imageToShow: 1,
-  switchImage: imgNumber => imgNumber
-};
+  switchImage: (imgNumber) => imgNumber
+}
