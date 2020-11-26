@@ -31,8 +31,8 @@ browserSync({
   open: false,
   cors: false,
   https: {
-    key: path.resolve(__dirname, '../ssl/localhost.key'),
-    cert: path.resolve(__dirname, '../ssl/localhost.crt')
+    key: path.resolve(__dirname, './ssl/localhost.key'),
+    cert: path.resolve(__dirname, './ssl/localhost.crt')
   },
   ghostMode: {
     clicks: false,
