@@ -13,3 +13,4 @@ yarn-error.log
 lerna-debug.log
 .travis.yml
 storybook-static
+.DS_Store
