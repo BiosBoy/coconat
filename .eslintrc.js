@@ -41,15 +41,31 @@ module.exports = {
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$', 'node_modules'],
     'import/resolver': {
       node: {
-        paths: ['./apps', './shared', './config', './globals'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts']
+        paths: [
+          './src',
+          './shared',
+          './globals'
+        ],
+        extensions: [
+          '.js',
+          '.jsx',
+          '.ts',
+          '.tsx',
+          '.d.ts'
+        ]
       }
     },
     react: {
       pragma: 'React',
       version: 'detect'
     },
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+    'import/extensions': [
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.d.ts'
+    ],
     propWrapperFunctions: ['forbidExtraProps', 'exact', 'Object.freeze'],
     'import/core-modules': []
   },
