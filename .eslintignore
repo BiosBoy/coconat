@@ -11,15 +11,14 @@ src/index.html
 *.d.ts
 typings.d.ts
 tsconfig.json
-.editorconfig
 .prettierignore
 .eslintignore
 .stylelintignore
 .eslintrc.js
+.gitignore
 *.md
 *.html
 .env
 *.json
 *.lock
 *.ejs
-.DS_Store

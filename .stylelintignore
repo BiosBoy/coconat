@@ -7,11 +7,11 @@ src/index.html
 *.css
 *.yml
 *.d.ts
-.editorconfig
 .prettierignore
 .stylelintignore
 .eslintignore
 .eslintrc.js
+.gitignore
 *.md
 *.html
 .env
@@ -22,4 +22,3 @@ src/index.html
 *.jsx
 *.tsx
 *.ejs
-.DS_Store

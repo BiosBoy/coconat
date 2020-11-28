@@ -5,15 +5,14 @@
 *.md
 *.json
 *.yml
-.editorconfig
 .prettierignore
 .eslintignore
 .stylelintignore
 .eslintrc.js
+.gitignore
 *.yml
 *.html
 .env
 *.json
 *.lock
 *.ejs
-.DS_Store
