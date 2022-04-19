@@ -1,19 +1,15 @@
-import React from 'react'
-import { Route, withRouter } from 'react-router-dom'
+import React from 'react';
 
-import { Header, Footer } from '../components'
+import { Body } from '../components';
 
-import Body from '../containers/body'
-import styles from '../styles/index.scss'
+import styles from '../styles/index.scss';
 
 const CoreLayout = () => {
   return (
     <div className={styles.appWrapper}>
-      <Header />
-      <Route exact path="/" component={Body} />
-      <Footer />
+      <Body />
     </div>
-  )
-}
+  );
+};
 
-export default withRouter(CoreLayout)
+export default CoreLayout;

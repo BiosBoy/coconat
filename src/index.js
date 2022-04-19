@@ -2,15 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import RedBox from 'redbox-react'
 
-import store from './store/store'
-import history from './store/history'
-import AppProvider from './provider/index'
+import AppProvider from './layout'
 
 const ENTRY_POINT = document.querySelector('#react-app-root')
 
 // creating starting endpoint for app.
 const render = () => {
-  ReactDOM.render(<AppProvider store={store} history={history} />, ENTRY_POINT)
+  ReactDOM.render(<AppProvider />, ENTRY_POINT)
 }
 
 // this will help us understand where the problem is located once app will fall.
