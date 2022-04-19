@@ -1,37 +1,51 @@
 import React from "react";
-import chroma from "chroma-js";
-import * as d3 from "d3";
 
 import Node from './Node';
 import Link from './Link';
 
+import { makeColor } from './utils';
+
 const Shape = ({ graph }) => {
-    const color = chroma.scale("Set2").classes(graph.nodes.length);
-    const colorScale = d3
-      .scaleLinear()
-      .domain([0, graph.nodes.length])
-      .range([0, 1]);
+    if (!graph) {
+      return null;
+    } 
+
+    const renderLinks = () => {
+     return graph.links.map((link, i) => (
+        <Link
+          key={`sankey-link-${i}`}
+          link={link}
+          color={makeColor(graph, link.source.index)}
+          maxWidth={30}
+        />
+      ))
+    }
+
+    const renderNodes = () => {
+      const nodesToRender = graph.nodes.map((node, i) => {
+        if (!node.Name) {
+          return null;
+        }
+
+        return (
+          <Node
+            key={`sankey-node-${i}`}
+            link={node}
+            color={makeColor(graph, i)}
+            name={node.Name}
+            height={30}
+            width={100}
+          />
+        );
+      })
+
+      return nodesToRender;
+    }
 
     return (
       <g>
-        {graph && graph.links.map((link, i) => (
-            <Link
-              key={`sankey-link-${i}`}
-              link={link}
-              color={color(colorScale(link.source.index)).hex()}
-              maxWidth={30}
-            />
-          ))}
-        {graph && graph.nodes.map((node, i) => (
-            <Node
-              key={`sankey-node-${i}`}
-              link={node}
-              color={color(colorScale(i)).hex()}
-              name={node.name}
-              height={30}
-              width={100}
-            />
-          ))}
+        {renderLinks()}
+        {renderNodes()}
       </g>
     );
 }

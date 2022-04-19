@@ -9,8 +9,6 @@ type LinkProps = {
 };
 
 const Link = ({ link, color, maxWidth }: LinkProps) => {
-  console.log(link, 'link');
-
   const linkWidth = (link.value / link.source.value) * maxWidth;
   const path = sankeyLinkHorizontal()(link);
 
@@ -29,7 +27,7 @@ const Link = ({ link, color, maxWidth }: LinkProps) => {
       onMouseLeave={() => setOpacity(0.3)}
     >
       <title>
-        {link.source.name} -&gt; {link.target.name}: {link.value}
+        {link.source.Name} -&gt; {link.target.Name}: {link.value}
       </title>
     </path>
   );
