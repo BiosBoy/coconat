@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { sankeyLinkHorizontalO, sankeyLinkHorizontal } from "./utils";
+import { sankeyLinkHorizontal } from "./utils";
 
 type LinkProps = {
   link: any;
@@ -9,8 +9,10 @@ type LinkProps = {
 };
 
 const Link = ({ link, color, maxWidth }: LinkProps) => {
-  const linkWidth = maxWidth ? (link.value / link.source.value) * maxWidth : link.width;
-  const path = maxWidth ? sankeyLinkHorizontalO()(link) : sankeyLinkHorizontal()(link);
+  console.log(link, 'link');
+
+  const linkWidth = (link.value / link.source.value) * maxWidth;
+  const path = sankeyLinkHorizontal()(link);
 
   const [opacity, setOpacity] = useState(0.3);
 

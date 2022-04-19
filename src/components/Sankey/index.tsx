@@ -1,15 +1,18 @@
 import React, { memo, useState, useEffect } from 'react';
 import { sankey as D3Sankey } from 'd3-sankey';
+import { useWindowSize } from 'react-use';
 
-import Sankey from './Sankey';
+import Shape from './Shape';
 
 import './index.scss';
 
 import { data } from './data';
 
-const Body = memo(() => {
-  const sankeyWidth = window.innerWidth - 100;
-  const sankeyHeight = window.innerHeight - 100;
+const Sankey = memo(() => {
+  const { width: windowWidth, height: windowHeight } = useWindowSize();
+
+  const sankeyWidth = windowWidth - 100;
+  const sankeyHeight = windowHeight - 100;
 
   const [graph, setGraph] = useState({
     nodes: [],
@@ -20,22 +23,19 @@ const Body = memo(() => {
     setGraph(
       D3Sankey()
         .size([sankeyWidth, sankeyHeight])
-        .nodeWidth(15)
-        .nodePadding(10)
+        .nodeWidth(100)
+        .nodePadding(40)
         .extent([[0, 0], [sankeyWidth, sankeyHeight - 50]])(data)
     );
   }, [sankeyWidth, sankeyHeight]);
 
   return (
-    <div>
-      Hello World!
-      <svg width={sankeyWidth} height={sankeyHeight}>
-        <Sankey graph={graph} />
-      </svg>
-    </div>
+    <svg width={sankeyWidth} height={sankeyHeight}>
+      <Shape graph={graph} />
+    </svg>
   );
 });
 
-Body.displayName = 'Body';
+Sankey.displayName = 'Sankey';
 
-export default Body;
+export default Sankey;

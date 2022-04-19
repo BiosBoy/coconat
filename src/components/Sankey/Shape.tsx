@@ -5,7 +5,7 @@ import * as d3 from "d3";
 import Node from './Node';
 import Link from './Link';
 
-const Sankey = ({ graph }) => {
+const Shape = ({ graph }) => {
     const color = chroma.scale("Set2").classes(graph.nodes.length);
     const colorScale = d3
       .scaleLinear()
@@ -36,4 +36,4 @@ const Sankey = ({ graph }) => {
     );
 }
 
-export default Sankey;
+export default Shape;

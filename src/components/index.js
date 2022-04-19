@@ -1,3 +1,3 @@
-import Body from './Body';
+import Sankey from './Sankey';
 
-export { Body };
+export { Sankey };
