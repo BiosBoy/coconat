@@ -1,7 +1,7 @@
 {
-  "name": "webpack5react17StarterKit",
+  "name": "sankey",
   "version": "1.0.0",
-  "description": "test stend to show how easy we can make code-splitting by in-box features in React 16.7 - Suspense and lazy.",
+  "description": "test",
   "main": "index.tsx",
   "author": "Sviat Kuzhelev",
   "license": "MIT",

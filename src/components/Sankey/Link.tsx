@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { sankeyLinkHorizontal } from "./utils";
+import { sankeyLinkHorizontal } from "../../utils";
 
 type LinkProps = {
   link: any;

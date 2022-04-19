@@ -3,12 +3,12 @@ import React from "react";
 import Node from './Node';
 import Link from './Link';
 
-import { makeColor } from './utils';
+import { makeColor } from '../../utils';
 
 const Shape = ({ graph }) => {
     if (!graph) {
       return null;
-    } 
+    }
 
     const renderLinks = () => {
      return graph.links.map((link, i) => (
