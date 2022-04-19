@@ -10,6 +10,7 @@
     "target": "es5",
     "jsx": "react",
     "moduleResolution": "node",
+    "types": ["d3"],
     "lib": ["es2020", "es2019", "es2018", "es2016", "es2015", "es6", "es2017", "dom"],
     "outDir": "./dist"
   },
